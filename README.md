@@ -9,7 +9,7 @@ The same menu format and a popup with details - in the implementation, this woul
 
 No zoom, since there's no point to zoom into an image, and no ability to drag components.
 
-Some elements permanently highlighted (KAHRP and STEVOR).
+Some elements permanently highlighted (KAHRP, PfEMP1, and STEVOR).
 
 There's still a map and navigation as originally, except clicking on enzymes and compounds would open a popup, and clicking on other pathways would navigate to other PlasmoDB pages.
 
