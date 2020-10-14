@@ -1,10 +1,10 @@
-# MPMP pathway records
+# MPMP pathways on PlasmoDB
 
 MPMP is a manually curated pathway resource for the malaria parasite. It was created as bitmaps (GIF images) with coordinate maps marking links to other pathways, and highlighting enzymes by EC number. 
 
+There were attempts to import the image contents, and render them in Cytoscape, like the other pathways. This project explores the idea of integrating images directly.
 
-
-## What we demo here
+## [Demo](https://wbazant.github.io/mpmp-plasmodb/)
 The same menu format and a popup with details - in the implementation, this would be a React component.
 
 No zoom, since there's no point to zoom into an image, and no ability to drag components.
@@ -14,6 +14,7 @@ Some elements permanently highlighted (KAHRP, PfEMP1, and STEVOR).
 There's still a map and navigation as originally, except clicking on enzymes and compounds would open a popup, and clicking on other pathways would navigate to other PlasmoDB pages.
 
 On hover, the elements light up. This is implemented by overlaying a canvas on the image, and can also be used to overlay charts.
+
 
 ## What the equivalent of a cytoscape drawing is expected to have
 Same menus (File / Layout / Paint Enzymes)
@@ -78,3 +79,20 @@ It could, maybe, be possible and useful to:
 - Remove things that are identifiable (loops, clocks) and replace them with JS things
 - Find boundaries of pink rectangles, and map them to the nearest blue box
 - Find what the arrows are for (attempted earlier, and not easy)
+
+
+### A new React component for drawing on canvas
+TODO consult Dave + Jamie + Cristina.
+
+There's a framework for drawing on canvases:
+https://github.com/konvajs/react-konva
+
+but it doesn't remove the need for image maps, unless listening for mouse moves.
+
+That's because canvas elements don't receive pointer events:
+https://stackoverflow.com/questions/31495344/change-cursor-depending-on-section-of-canvas
+
+This is a good match: https://coldiary.github.io/react-image-mapper/
+but it's not maintained.
+
+Maybe just React with the right image map does the onClick etc. correctly?
